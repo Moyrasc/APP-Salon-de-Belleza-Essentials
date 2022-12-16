@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Clases\Email;
 use MVC\Router;
 use Model\Usuario;
 
@@ -40,6 +41,10 @@ class LoginController
                 } else {
                     // Encriptar pass
                     $usuario->hashPassword();
+                    // Generar token 
+                    $usuario->crearToken();
+                    //envio mail 
+                    $email = new Email($usuario->nombre, $usuario->email, $usuario->token);
                     debuguear($usuario);
                 }
             }
