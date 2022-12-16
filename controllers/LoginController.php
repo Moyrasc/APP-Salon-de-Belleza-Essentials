@@ -14,9 +14,9 @@ class LoginController
     {
         echo "Desde Logout";
     }
-    public static function contraseña()
+    public static function contraseña(Router $router)
     {
-        echo "Desde Contraseña";
+        $router->render('auth/olvide-contraseña', []);
     }
     public static function recuperar()
     {
