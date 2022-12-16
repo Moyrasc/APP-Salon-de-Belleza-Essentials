@@ -5,7 +5,7 @@ namespace Model;
 class Usuario extends ActiveRecord
 {
     //BBDD
-    protected static $table = 'usuarios';
+    protected static $tabla = 'usuarios';
     protected static $columnasDB = ['id', 'nombre', 'apellido', 'email', 'telefono', 'password', 'admin', 'confirmado', 'token'];
     public $id;
     public $nombre;
@@ -52,5 +52,24 @@ class Usuario extends ActiveRecord
         }
 
         return self::$alertas;
+    }
+    // Comprobación de si user existe
+    public function existeUsuario()
+    {
+
+        $query = " SELECT * FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1 ";
+
+        $resultado = self::$db->query($query);
+
+        if ($resultado->num_rows) {
+            self::$alertas['error'][] = 'El usuario ya esta registrado';
+        }
+
+        return $resultado;
+    }
+
+    public function hashPassword()
+    {
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
     }
 }
