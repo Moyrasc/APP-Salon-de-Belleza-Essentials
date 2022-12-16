@@ -11,5 +11,5 @@
 
 <div class="acciones">
     <a href="/">¿Ya tienes una cuenta? Inicia sesión </a>
-    <a href="/contraseña">¿Aún no tienes cuenta? Pincha aquí</a>
+    <a href="/">¿Aún no tienes cuenta? Pincha aquí</a>
 </div>
