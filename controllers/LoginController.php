@@ -24,6 +24,6 @@ class LoginController
     }
     public static function crear(Router $router)
     {
-        $router->render('auth/crear-cuenta');
+        $router->render('auth/crear-cuenta', []);
     }
 }
