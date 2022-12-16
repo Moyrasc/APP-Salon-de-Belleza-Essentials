@@ -7,8 +7,8 @@
         <input type="email" id="email" placeholder="Introduce tu email" />
     </div>
     <div class="campo">
-        <laber for="password">Contraseña</laber>
-        <input type="password" id="password" placeholder="Introduce contraseña" name="password" />
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Introduce tu contraseña" name="password" />
     </div>
 
     <input type="submit" class="boton" value="Inicio Sesión" />
